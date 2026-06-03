@@ -74,6 +74,18 @@ h3 {
     filter: invert(100%) sepia(36%) saturate(2483%) hue-rotate(185deg) brightness(128%) contrast(92%);
 }
 
+.aktivLikes {
+    width: 2rem;
+    height: 2rem;
+    filter: invert(100%) sepia(36%) saturate(2483%) hue-rotate(185deg) brightness(128%) contrast(92%);
+}
+
+.aktivLiked {
+    width: 2rem;
+    height: 2rem;
+    filter: invert(100%) sepia(36%) saturate(2483%) hue-rotate(185deg) brightness(128%) contrast(92%);
+}
+
 .commits {
     height: 150px;
     display: flex;

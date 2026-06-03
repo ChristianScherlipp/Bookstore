@@ -15,8 +15,8 @@ function setBookCards(indexBookList) {
     <section class="price_react">
         <h3 class="price">${booksLibrary[indexBookList].price} €</h3>
         <div class="react">
-            <p><img id="likes${indexBookList}" src="./assets/icons/herz.svg" alt="">${booksLibrary[indexBookList].likes}</p>
-            <p><img id="favorit${indexBookList}" src="./assets/icons/stern2.svg" alt=""></p>
+            <p><img onclick=" toggleLikes()" id="likes${indexBookList}" src="./assets/icons/herz.svg" alt="">${booksLibrary[indexBookList].likes}</p>
+            <p><img onclick="" id="favorit${indexBookList}" src="./assets/icons/stern2.svg" alt=""></p>
         </div>
     </section>
     <section class="commits">
