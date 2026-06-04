@@ -15,8 +15,8 @@ function setBookCards(indexBookList) {
     <section class="price_react">
         <h3 class="price">${booksLibrary[indexBookList].price} €</h3>
         <div class="react">
-            <p><img onclick=" toggleLikes()" id="likes${indexBookList}" src="./assets/icons/herz.svg" alt="">${booksLibrary[indexBookList].likes}</p>
-            <p><img onclick="" id="favorit${indexBookList}" src="./assets/icons/stern2.svg" alt=""></p>
+            <p><img class="iconStyle" onclick=" toggleLikes('likes${indexBookList}')" id="likes${indexBookList}" src="./assets/icons/herz.svg" alt="">${booksLibrary[indexBookList].likes}</p>
+            <p><img class="iconStyle" onclick=" toggleLiked('favorit${indexBookList}')" id="favorit${indexBookList}" src="./assets/icons/stern2.svg" alt=""></p>
         </div>
     </section>
     <section class="commits">
@@ -29,4 +29,13 @@ function setBookCards(indexBookList) {
         </section>
     </section>
 </section>`;
+}
+
+function setComments(indexCommentList) {
+    return `
+            <p>
+                <strong>${booksLibrary[indexBookList].comments[indexCommentList].name}</strong>: <br>
+                ${booksLibrary[indexBookList].comments[indexCommentList].comment}
+            </p> <br>
+        `;
 }
