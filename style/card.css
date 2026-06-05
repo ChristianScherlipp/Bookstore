@@ -94,6 +94,21 @@ h3 {
     gap: 5px;
 }
 
+.readInput > input {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+.readInput > button {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .textOutput {
     display: flex;
     flex-direction: column;
