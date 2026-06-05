@@ -1,6 +1,5 @@
-
-
 function setBookCards(indexBookList) {
+    let statusLikeClass = booksLibrary[indexBookList].liked ? "aktivLikes" : "iconStyle";
     return `
     <section class="bookCard">
     <section class="titles_authors">
@@ -15,8 +14,8 @@ function setBookCards(indexBookList) {
     <section class="price_react">
         <h3 class="price">${booksLibrary[indexBookList].price} €</h3>
         <div class="react">
-            <p><img class="iconStyle" onclick=" toggleLikes('likes${indexBookList}')" id="likes${indexBookList}" src="./assets/icons/herz.svg" alt="">${booksLibrary[indexBookList].likes}</p>
-            <p><img class="iconStyle" onclick=" toggleLiked('favorit${indexBookList}')" id="favorit${indexBookList}" src="./assets/icons/stern2.svg" alt=""></p>
+            <p><img class="${statusLikeClass}" onclick=" toggleLikes('${indexBookList}')" id="likes${indexBookList}" src="./assets/icons/herz.svg" alt="Like"><span>${booksLibrary[indexBookList].likes}</span></p>
+            <p><img class="iconStyle" onclick=" togglefavorit('${indexBookList}')" id="favorit${indexBookList}" src="./assets/icons/stern2.svg" alt=""></p>
         </div>
     </section>
     <section class="commits">
@@ -24,8 +23,9 @@ function setBookCards(indexBookList) {
                     ${getComments(indexBookList)}
                 </div>
         <section class="readInput">
-            <input type="text" placeholder="Hier Kommentar schreiben">
-            <button onclick="SendComment">Senden</button>
+            <input id="name_input${indexBookList}" type="text" placeholder="Hier Name schreiben">
+            <input id="text_input${indexBookList}" type="text" placeholder="Hier Kommentar schreiben">
+            <button onclick="addComment('${indexBookList}')">Senden</button>
         </section>
     </section>
 </section>`;
