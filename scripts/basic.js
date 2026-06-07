@@ -54,7 +54,5 @@ function addComment(i) {
         commentNameRef.value = "";
         commentTextRef.value = "";
     }
-    renderBookCards()
+    renderBookCards();
 }
-
-
