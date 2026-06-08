@@ -32,7 +32,7 @@ function setBookCards(indexBookList) {
 </section>`;
 }
 
-function setComments(indexCommentList) {
+function setComments(indexCommentList, indexBookList) {
     return `
             <p>
                 <strong>${booksLibrary[indexBookList].comments[indexCommentList].name}</strong>: <br>

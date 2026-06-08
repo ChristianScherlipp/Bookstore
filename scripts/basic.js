@@ -1,4 +1,4 @@
-
+// let indexBookList;
 function init() {
     getDataFromLocalstorage();
     renderBookCards();
@@ -8,7 +8,7 @@ function renderBookCards() {
     const bookCardRef = document.getElementById('bookCards');
 
     bookCardRef.innerHTML = "";
-    for ( indexBookList = 0; indexBookList < booksLibrary.length; indexBookList++) {
+    for (let indexBookList = 0; indexBookList < booksLibrary.length; indexBookList++) {
         bookCardRef.innerHTML += setBookCards(indexBookList);
     }
 }
@@ -21,7 +21,7 @@ function getComments(indexBookList) {
         return "<p>Noch keine Kommentare vorhanden.</p>";
     }
     for (let indexCommentList = 0; indexCommentList < commentsList.length; indexCommentList++) {
-        commentsRef += setComments(indexCommentList);
+        commentsRef += setComments(indexCommentList, indexBookList);
     }
     return commentsRef;
 }
