@@ -1,4 +1,3 @@
-let indexBookList;
 
 function init() {
     getDataFromLocalstorage();
@@ -6,7 +5,7 @@ function init() {
 }
 
 function renderBookCards() {
-    let bookCardRef = document.getElementById('bookCards');
+    const bookCardRef = document.getElementById('bookCards');
 
     bookCardRef.innerHTML = "";
     for ( indexBookList = 0; indexBookList < booksLibrary.length; indexBookList++) {
@@ -25,6 +24,28 @@ function getComments(indexBookList) {
         commentsRef += setComments(indexCommentList);
     }
     return commentsRef;
+}
+
+function showFavorit() {
+    const bookCardRef = document.getElementById('bookCards');
+    bookCardRef.innerHTML = "";
+
+    for (let indexBookList = 0; indexBookList < booksLibrary.length; indexBookList++) {
+        if (booksLibrary[indexBookList].favorit) {
+            bookCardRef.innerHTML += setBookCards(indexBookList);
+        }
+    }
+}
+
+function showNotFavorit() {
+    const bookCardRef = document.getElementById('bookCards');
+    bookCardRef.innerHTML = "";
+
+    for (let indexBookList = 0; indexBookList < booksLibrary.length; indexBookList++) {
+        if (!booksLibrary[indexBookList].favorit) {
+            bookCardRef.innerHTML += setBookCards(indexBookList);
+        }
+    }
 }
 
 function toggleLikes(i) {
@@ -48,10 +69,6 @@ function toggleFavorit(i) {
     saveDataToLocalStorage();
     renderBookCards();
 }
-
-// function togglefavorit(id) {
-//     document.getElementById(`favorit${id}`).classList.toggle("aktivFavorit");
-// }
 
 function addComment(i) {
     let commentNameRef = document.getElementById(`name_input${i}`);
