@@ -1,4 +1,3 @@
-// let indexBookList;
 function init() {
     getDataFromLocalstorage();
     renderBookCards();
