@@ -1,5 +1,6 @@
 function setBookCards(indexBookList) {
     let statusLikeClass = booksLibrary[indexBookList].liked ? "aktivLikes" : "iconStyle";
+    let statusFavoritClass = booksLibrary[indexBookList].favorit ? "aktivFavorit" : "iconStyle";
     return `
     <section class="bookCard">
     <section class="titles_authors">
@@ -15,7 +16,7 @@ function setBookCards(indexBookList) {
         <h3 class="price">${booksLibrary[indexBookList].price} €</h3>
         <div class="react">
             <p><img class="${statusLikeClass}" onclick=" toggleLikes('${indexBookList}')" id="likes${indexBookList}" src="./assets/icons/herz.svg" alt="Like"><span>${booksLibrary[indexBookList].likes}</span></p>
-            <p><img class="iconStyle" onclick=" togglefavorit('${indexBookList}')" id="favorit${indexBookList}" src="./assets/icons/stern2.svg" alt=""></p>
+            <p><img class="${statusFavoritClass}" onclick=" toggleFavorit('${indexBookList}')" id="favorit${indexBookList}" src="./assets/icons/stern2.svg" alt=""></p>
         </div>
     </section>
     <section class="commits">

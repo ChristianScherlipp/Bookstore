@@ -39,9 +39,19 @@ function toggleLikes(i) {
     renderBookCards();
 }
 
-function togglefavorit(id) {
-    document.getElementById(`favorit${id}`).classList.toggle("aktivFavorit");
+function toggleFavorit(i) {
+    if (booksLibrary[i].favorit) {
+        booksLibrary[i].favorit = false;
+    } else {
+        booksLibrary[i].favorit = true;
+    }
+    saveDataToLocalStorage();
+    renderBookCards();
 }
+
+// function togglefavorit(id) {
+//     document.getElementById(`favorit${id}`).classList.toggle("aktivFavorit");
+// }
 
 function addComment(i) {
     let commentNameRef = document.getElementById(`name_input${i}`);
