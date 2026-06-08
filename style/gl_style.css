@@ -50,6 +50,7 @@ body > button {
     border-radius: 0.5rem;
     color: whitesmoke;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .mainBookCards  {
