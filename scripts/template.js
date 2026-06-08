@@ -24,9 +24,9 @@ function setBookCards(indexBookList) {
                     ${getComments(indexBookList)}
                 </div>
         <section class="readInput">
-            <input id="name_input${indexBookList}" type="text" placeholder="Hier Name schreiben">
-            <input id="text_input${indexBookList}" type="text" placeholder="Hier Kommentar schreiben">
-            <button onclick="addComment('${indexBookList}')">Senden</button>
+            <input aria-label="Eingabefeld für Name" id="name_input${indexBookList}" type="text" placeholder="Hier Name schreiben">
+            <input aria-label="Eingabefeld für den Kommentar" id="text_input${indexBookList}" type="text" placeholder="Hier Kommentar schreiben">
+            <button aria-label="Nachricht senden" onclick="addComment('${indexBookList}')">Senden</button>
         </section>
     </section>
 </section>`;
