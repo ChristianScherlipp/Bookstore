@@ -1,7 +1,8 @@
 let indexBookList;
 
 function init() {
-    renderBookCards()
+    getDataFromLocalstorage();
+    renderBookCards();
 }
 
 function renderBookCards() {
@@ -34,6 +35,7 @@ function toggleLikes(i) {
         booksLibrary[i].likes++;
         booksLibrary[i].liked = true;
     }
+    saveDataToLocalStorage();
     renderBookCards();
 }
 
@@ -54,5 +56,19 @@ function addComment(i) {
         commentNameRef.value = "";
         commentTextRef.value = "";
     }
+    saveDataToLocalStorage();
     renderBookCards();
+}
+
+function saveDataToLocalStorage() {
+    localStorage.setItem("bookData", JSON.stringify(booksLibrary));
+}
+
+function getDataFromLocalstorage() {
+    let booksLibraryData = localStorage.getItem("bookData");
+    if (booksLibraryData === null) {
+        return booksLibrary;
+    }else {
+        booksLibrary = JSON.parse(booksLibraryData);
+    }
 }
