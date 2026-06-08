@@ -47,7 +47,7 @@ h1 {
 body > button {
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.4);
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     color: whitesmoke;
     font-size: 1.5rem;
 }
