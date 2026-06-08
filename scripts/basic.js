@@ -8,7 +8,9 @@ function renderBookCards() {
 
     bookCardRef.innerHTML = "";
     for (let indexBookList = 0; indexBookList < booksLibrary.length; indexBookList++) {
-        bookCardRef.innerHTML += setBookCards(indexBookList);
+        let statusLikeClass = booksLibrary[indexBookList].liked ? "aktivLikes" : "iconStyle";
+    let statusFavoritClass = booksLibrary[indexBookList].favorit ? "aktivFavorit" : "iconStyle";
+        bookCardRef.innerHTML += setBookCards(indexBookList, statusLikeClass, statusFavoritClass);
     }
 }
 

@@ -1,6 +1,4 @@
-function setBookCards(indexBookList) {
-    let statusLikeClass = booksLibrary[indexBookList].liked ? "aktivLikes" : "iconStyle";
-    let statusFavoritClass = booksLibrary[indexBookList].favorit ? "aktivFavorit" : "iconStyle";
+function setBookCards(indexBookList, statusLikeClass, statusFavoritClass) {
     return `
     <section class="bookCard">
     <section class="titles_authors">
