@@ -33,7 +33,10 @@ function showFavorit() {
 
     for (let indexBookList = 0; indexBookList < booksLibrary.length; indexBookList++) {
         if (booksLibrary[indexBookList].favorit) {
-            bookCardRef.innerHTML += setBookCards(indexBookList);
+            let statusLikeClass = booksLibrary[indexBookList].liked ? "aktivLikes" : "iconStyle";
+            let statusFavoritClass = booksLibrary[indexBookList].favorit ? "aktivFavorit" : "iconStyle";
+            bookCardRef.innerHTML += setBookCards(indexBookList, statusLikeClass, statusFavoritClass);
+            
         }
     }
 }
@@ -44,7 +47,9 @@ function showNotFavorit() {
 
     for (let indexBookList = 0; indexBookList < booksLibrary.length; indexBookList++) {
         if (!booksLibrary[indexBookList].favorit) {
-            bookCardRef.innerHTML += setBookCards(indexBookList);
+            let statusLikeClass = booksLibrary[indexBookList].liked ? "aktivLikes" : "iconStyle";
+            let statusFavoritClass = booksLibrary[indexBookList].favorit ? "aktivFavorit" : "iconStyle";
+            bookCardRef.innerHTML += setBookCards(indexBookList, statusLikeClass, statusFavoritClass);
         }
     }
 }
